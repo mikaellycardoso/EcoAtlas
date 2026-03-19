@@ -27,6 +27,8 @@ Ao cruzar a base diária do INMET com os dados anuais do MapBiomas, a análise e
 
 **Conclusão Analítica:** O p-valor de `0.0000` demonstra uma **tendência estatisticamente significativa** de aquecimento associada à perda de vegetação. A correlação de `0.157` (positiva, porém moderada) reflete a realidade de um modelo submetido ao forte ruído da sazonalidade natural (estações do ano), provando que, mesmo com as quedas bruscas de temperatura no inverno, a supressão vegetal puxa a linha de tendência térmica geral para cima.
 
+## 📊 [Clique aqui para acessar o Dashboard Interativo](https://app.powerbi.com/groups/me/reports/edef96e2-2af9-4465-9caa-89c5c8dd03b7?ctid=b9976b30-8143-4ac5-a408-f906b4062b85&pbi_source=linkShare).
+
 ## 💻 Como reproduzir este projeto
 1. Clone este repositório: `git clone https://github.com/mikaellycardoso/EcoAtlas.git`
 2. Instale as dependências: `pip install pandas matplotlib seaborn scipy`
