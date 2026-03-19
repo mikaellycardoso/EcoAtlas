@@ -37,5 +37,10 @@ Ao cruzar a base diária do INMET com os dados anuais do MapBiomas, a análise e
 5. O arquivo `.pbix` do dashboard está disponível na raiz do projeto para visualização no Power BI Desktop.
 
 ---
-**Desenvolvido por:** Mikaelly
-*Estudante de Sistemas de Informação e aspirante a Cientista de Dados, com foco em transformar dados complexos em decisões de negócio.*
+
+Desenvolvido por: 
+**Mikaelly Cardoso- Estudante de Sistemas de Informação e aspirante a Cientista de Dados, com foco em transformar dados complexos em decisões de negócio.**
+
+---
+**📅 Recorte Temporal:
+Os dados de supressão vegetal (MapBiomas) e clima (INMET) foram analisados até dezembro de 2024. O projeto será atualizado conforme novas janelas de dados oficiais de 2025 forem disponibilizadas pelas instituições.**
