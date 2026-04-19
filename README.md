@@ -1,46 +1,117 @@
-# 🌳 EcoAtlas: Análise de Impacto Climático e Expansão Urbana em Vitória-ES (2021-2024)
+# 🌳 EcoAtlas: Data Intelligence Against Urban Warming
+### Statistical Analysis of Vegetation Loss & Temperature Rise — Vitória, ES (2021–2024)
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-
-## 📌 Sobre o Projeto
-O **EcoAtlas** é um projeto de Análise de Dados ponta a ponta que investiga a relação entre a supressão vegetal (desmatamento urbano) e a variação da temperatura média na cidade de Vitória, Espírito Santo, durante o ciclo de 2021 a 2024. O objetivo é utilizar dados públicos para provar, estatística e visualmente, os impactos climáticos das mudanças na cobertura vegetal do município.
-
-## ❓ O Problema de Negócio
-Com o avanço da expansão urbana, questiona-se o impacto direto da perda de áreas verdes no microclima local. A hipótese central deste projeto testa se a redução de hectares de vegetação possui uma correlação matemática positiva com o aumento das temperaturas médias registradas na cidade.
-
-## 🛠️ Metodologia e Ferramentas
-O projeto foi desenvolvido seguindo o ciclo completo de Ciência de Dados:
-
-1. **Extração de Dados (Data Gathering):** Coleta de dados climáticos diários via **INMET** (Instituto Nacional de Meteorologia) e dados anuais de cobertura vegetal via **MapBiomas**.
-2. **Limpeza e Tratamento (Python/Pandas):** Uso de Jupyter Notebooks para tratamento de valores nulos, conversão de tipagem de datas e mesclagem (Merge) de bases de granularidades diferentes (diária vs. anual).
-3. **Análise Exploratória e Estatística (Python/Seaborn/SciPy):** Aplicação de Gráficos de Dispersão e cálculo do Coeficiente de Correlação de Pearson para validação de hipóteses.
-4. **Visualização de Dados e Storytelling (Power BI):** Desenvolvimento de um dashboard interativo focado na experiência do usuário (UX), contendo mapas de calor, tooltips dinâmicos e métricas de impacto (ex: conversão de hectares para campos de futebol). Linguagem DAX utilizada para inteligência de tempo e categorização de estações do ano.
-
-## 📊 Principais Descobertas e Validação Estatística
-Ao cruzar a base diária do INMET com os dados anuais do MapBiomas, a análise estatística no Python revelou os seguintes números:
-
-* **Coeficiente de Correlação (r):** `0.157`
-* **P-valor:** `0.0000`
-
-**Conclusão Analítica:** O p-valor de `0.0000` demonstra uma **tendência estatisticamente significativa** de aquecimento associada à perda de vegetação. A correlação de `0.157` (positiva, porém moderada) reflete a realidade de um modelo submetido ao forte ruído da sazonalidade natural (estações do ano), provando que, mesmo com as quedas bruscas de temperatura no inverno, a supressão vegetal puxa a linha de tendência térmica geral para cima.
-
-## 📊 [Clique aqui para acessar o Dashboard Interativo](https://app.powerbi.com/reportEmbed?reportId=331ac0fc-fb54-40da-aa15-f74c0db65141&autoAuth=true&ctid=b9976b30-8143-4ac5-a408-f906b4062b85).
-
-## 💻 Como reproduzir este projeto
-1. Clone este repositório: `git clone https://github.com/mikaellycardoso/EcoAtlas.git`
-2. Instale as dependências: `pip install pandas matplotlib seaborn scipy`
-3. Os dados brutos e tratados estão na pasta `data/`.
-4. Execute os scripts na pasta `notebooks/` na ordem numérica para reproduzir a limpeza e o teste estatístico.
-5. O arquivo `.pbix` do dashboard está disponível na raiz do projeto para visualização no Power BI Desktop.
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
 
 ---
 
-Desenvolvido por: 
-**Mikaelly Cardoso- Estudante de Sistemas de Informação e aspirante a Cientista de Dados, com foco em transformar dados complexos em decisões de negócio.**
+## 📌 About the Project
+
+**EcoAtlas** is an end-to-end data science project investigating the relationship between urban deforestation and temperature variation in the city of Vitória, Espírito Santo, Brazil — from 2021 to 2024.
+
+The goal is to use open government data to **statistically prove** the climate impact of vegetation loss at the urban micro-level, transforming raw data into actionable intelligence for public policy and ESG decision-making.
 
 ---
-**📅 Recorte Temporal:
-Os dados de supressão vegetal (MapBiomas) e clima (INMET) foram analisados até dezembro de 2024. O projeto será atualizado conforme novas janelas de dados oficiais de 2025 forem disponibilizadas pelas instituições.**
+
+## ❓ The Problem
+
+Urban heat is not just a feeling — it's a measurable consequence of planning decisions.
+
+During daily commutes through Vitória, a clear pattern emerged: wherever urban trees were removed, the heat became noticeably worse. Open datasets on vegetation suppression (MapBiomas) and historical temperature records (INMET) existed separately, in isolated government silos. **Without crossing these datasets, the true environmental cost of urban deforestation remained invisible** — masking the formation of heat islands that directly affect the health and quality of life of the population.
+
+---
+
+## 🛠️ Methodology
+
+The project follows a complete Data Science cycle:
+
+**1. Data Extraction**
+- Daily climate series via **INMET** (Brazil's National Meteorology Institute)
+- Annual vegetation cover data via **MapBiomas**
+
+**2. Data Cleaning & Processing (Python/Pandas)**
+- Null value treatment and outlier detection
+- Date type normalization
+- Cross-granularity merging: daily climate data × annual urban geography data
+- This was the core technical challenge — ensuring analytical consistency when combining datasets with incompatible time granularities
+
+**3. Statistical Analysis (Python/SciPy/Seaborn)**
+- Exploratory Data Analysis (EDA) with scatter plots and distribution charts
+- Hypothesis testing: Pearson Correlation Coefficient + p-value calculation
+- Seasonal noise mitigation to isolate the deforestation signal from natural temperature variation
+
+**4. Visualization & Storytelling (Power BI/DAX)**
+- Interactive geospatial dashboard with Shape Maps
+- DAX Time Intelligence for seasonal filtering and trend analysis
+- UX-focused design for non-technical decision-makers
+
+---
+
+## 📊 Key Results
+
+| Metric | Value |
+|---|---|
+| Pearson Correlation (r) | 0.157 |
+| p-value | 0.0000 |
+| Analysis period | 2021–2024 |
+| Data sources | INMET · MapBiomas |
+
+**Conclusion:** The p-value of `0.0000` confirms a **statistically significant warming trend** associated with vegetation loss. The correlation of `0.157` — positive but moderate — reflects the reality of a model exposed to strong seasonal noise (winter temperature drops), proving that even with natural variation, vegetation suppression pulls the long-term thermal trend upward.
+
+---
+
+## 📊 [Access the Interactive Dashboard →](https://app.powerbi.com/reportEmbed?reportId=331ac0fc-fb54-40da-aa15-f74c0db65141&autoAuth=true&ctid=b9976b30-8143-4ac5-a408-f906b4062b85)
+
+---
+
+## 📁 Repository Structure
+
+```
+EcoAtlas/
+├── data/
+│   ├── raw/              # Original INMET and MapBiomas exports
+│   └── processed/        # Cleaned and merged datasets
+├── notebooks/
+│   ├── 01_extraction.ipynb
+│   ├── 02_cleaning.ipynb
+│   ├── 03_analysis.ipynb
+│   └── 04_visualization.ipynb
+├── dashboard/            # Power BI .pbix file
+├── outputs/              # Charts and statistical outputs
+└── README.md
+```
+
+---
+
+## 💻 How to Reproduce
+
+```bash
+# Clone the repository
+git clone https://github.com/mikaellycardoso/EcoAtlas.git
+
+# Install dependencies
+pip install pandas matplotlib seaborn scipy
+
+# Run notebooks in order
+# Raw and processed data are in the /data folder
+# The .pbix dashboard file is available in /dashboard
+```
+
+---
+
+> **Technical note:** This project uses the latest cycle of consolidated data available (2021–2024), respecting the official processing and publication timelines of the cited government sources. The project will be updated as new 2025 data windows become available.
+
+---
+
+## 👩‍💻 Author
+
+**Mikaelly Cardoso** — Undergraduate Researcher in AI & Data Science  
+FAESA Centro Universitário Espírito-Santense · Vitória, ES, Brazil
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mikaelly--cardoso-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/mikaelly-cardoso)
+[![Lattes](https://img.shields.io/badge/Lattes-CNPq-blue?style=flat)](http://lattes.cnpq.br/6340388262242435)
+[![Portfolio](https://img.shields.io/badge/Portfolio-mikaellycardoso.github.io-4CAF50?style=flat)](https://mikaellycardoso.github.io/mikaelly-cardoso.github.io/)
